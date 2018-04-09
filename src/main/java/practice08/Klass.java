@@ -5,22 +5,22 @@ public class Klass {
     private Student leader;
 
     public Klass(int i) {
-        number = i;
+        this.number = i;
     }
 
     public int getNumber() {
-        return number;
+        return this.number;
     }
 
     public String getDisplayName() {
-        return "Class " + String.valueOf(number);
+        return "Class " + String.valueOf(this.number);
     }
 
     public void assignLeader(Student jerry) {
-        leader = jerry;
+        this.leader = jerry;
     }
 
     public Student getLeader() {
-        return leader;
+        return this.leader;
     }
 }
