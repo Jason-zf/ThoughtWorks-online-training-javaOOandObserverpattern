@@ -8,27 +8,27 @@ public class Klass {
     private boolean isInthisKlass;
 
     public Klass(int i) {
-        number = i;
+        this.number = i;
     }
 
     public int getNumber() {
-        return number;
+        return this.number;
     }
 
     public String getDisplayName() {
-        return "Class " + String.valueOf(number);
+        return "Class " + String.valueOf(this.number);
     }
 
     public void assignLeader(Student jerry) {
         if (jerry.getKlass().isInthisKlass == true) {
-            leader = jerry;
+            this.leader = jerry;
             return;
         }
         System.out.print("It is not one of us.\n");
     }
 
     public Student getLeader() {
-        return leader;
+        return this.leader;
     }
 
     public void appendMember(Student jerry) {

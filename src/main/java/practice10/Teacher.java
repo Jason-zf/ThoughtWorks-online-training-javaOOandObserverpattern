@@ -8,9 +8,9 @@ import java.util.stream.Collectors;
 public class Teacher extends Person {
     private HashSet<Klass> classes;
 
-    public <E> Teacher(int i, String tom, int i1, HashSet<Klass> es) {
+    public Teacher(int i, String tom, int i1, HashSet<Klass> es) {
         super(i, tom, i1);
-        classes = es;
+        this.classes = es;
     }
 
     public Teacher(int i, String tom, int i1) {
@@ -18,21 +18,21 @@ public class Teacher extends Person {
     }
 
     public HashSet<Klass> getClasses() {
-        return classes;
+        return this.classes;
     }
 
     @Override
     public String introduce() {
-        if (classes == null) {
+        if (this.classes == null) {
             return super.introduce() + " I am a Teacher. I teach No Class.";
         }
-        List<Integer> cl = classes.stream().map(klass -> klass.getNumber()).collect(Collectors.toList());
+        List<Integer> cl = this.classes.stream().map(klass -> klass.getNumber()).collect(Collectors.toList());
         Collections.sort(cl);
         return super.introduce() + " I am a Teacher. I teach Class " + cl.stream().map(integer -> String.valueOf(integer)).collect(Collectors.joining(", ")) + ".";
     }
 
     public boolean isTeaching(Student jerry) {
-        return classes.stream().filter(klass -> jerry.getKlass() == klass).collect(Collectors.toSet()).size() != 0;
+        return this.classes.stream().filter(klass -> jerry.getKlass() == klass).collect(Collectors.toSet()).size() != 0;
     }
 
     public String introduceWith(Student jerry) {
