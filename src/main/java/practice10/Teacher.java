@@ -32,7 +32,7 @@ public class Teacher extends Person {
     }
 
     public boolean isTeaching(Student jerry) {
-        return this.classes.stream().filter(klass -> jerry.getKlass() == klass).collect(Collectors.toSet()).size() != 0;
+        return this.classes.stream().filter(klass -> klass.isIn(jerry)).collect(Collectors.toSet()).size() != 0;
     }
 
     public String introduceWith(Student jerry) {
