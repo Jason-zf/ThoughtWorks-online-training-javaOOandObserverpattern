@@ -1,7 +1,5 @@
 package practice02;
 
-import java.awt.font.TextHitInfo;
-
 public class Student extends Person {
     private int klass;
 

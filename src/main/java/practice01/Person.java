@@ -1,13 +1,12 @@
 package practice01;
 
-import java.awt.font.TextHitInfo;
-
 public class Person {
     private String name;
     private int age;
+
     public Person(String tom, int i) {
-        this.name=tom;
-        this.age=i;
+        this.name = tom;
+        this.age = i;
     }
 
     public String getName() {
