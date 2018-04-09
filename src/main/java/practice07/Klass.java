@@ -8,10 +8,10 @@ public class Klass {
     }
 
     public int getNumber() {
-        return number;
+        return this.number;
     }
 
     public String getDisplayName() {
-        return "Class " + String.valueOf(number);
+        return "Class " + String.valueOf(this.number);
     }
 }

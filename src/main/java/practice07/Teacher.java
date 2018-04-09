@@ -14,7 +14,7 @@ public class Teacher extends Person {
     }
 
     public Klass getKlass() {
-        return klass;
+        return this.klass;
     }
 
     @Override
