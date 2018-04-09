@@ -8,7 +8,7 @@ public class Teacher extends Person implements Observer {
 
     public Teacher(int i, String tom, int i1, HashSet<Klass> es) {
         super(i, tom, i1);
-        classes = es;
+        this.classes = es;
         for (Klass klass : es) {
             klass.addObserver(this);
         }
@@ -19,21 +19,21 @@ public class Teacher extends Person implements Observer {
     }
 
     public HashSet<Klass> getClasses() {
-        return classes;
+        return this.classes;
     }
 
     @Override
     public String introduce() {
-        if (classes == null) {
+        if (this.classes == null) {
             return super.introduce() + " I am a Teacher. I teach No Class.";
         }
-        List<Integer> cl = classes.stream().map(klass -> klass.getNumber()).collect(Collectors.toList());
+        List<Integer> cl = this.classes.stream().map(klass -> klass.getNumber()).collect(Collectors.toList());
         Collections.sort(cl);
         return super.introduce() + " I am a Teacher. I teach Class " + cl.stream().map(integer -> String.valueOf(integer)).collect(Collectors.joining(", ")) + ".";
     }
 
     public boolean isTeaching(Student jerry) {
-        return classes.stream().filter(klass -> klass.isIn(jerry)).collect(Collectors.toSet()).size() != 0;
+        return this.classes.stream().filter(klass -> klass.isIn(jerry)).collect(Collectors.toSet()).size() != 0;
     }
 
     public String introduceWith(Student jerry) {
