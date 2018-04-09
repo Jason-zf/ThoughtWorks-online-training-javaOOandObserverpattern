@@ -42,7 +42,6 @@ public class Teacher extends Person implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-
         System.out.print("I am " + this.getName() + ". I know Jerry " + (((Klass) o).getLeader() == null ? "has joined " : "become Leader of ") + "Class 2.\n");
     }
 }
